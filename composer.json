@@ -1,11 +1,13 @@
 {
-    "name": "mailgun/mailgun-php",
+    "name": "cosnavel/mailgun-php",
     "description": "The Mailgun SDK provides methods for all API functions.",
     "license": "MIT",
     "authors": [
         {
-            "name": "Travis Swientek",
-            "email": "travis@mailgunhq.com"
+            "name": "Cosnavel",
+            "email": "niclasdevelop@gmail.com",
+            "homepage": "https://niclaskahlmeier.de",
+            "role": "Developer"
         }
     ],
     "require": {
