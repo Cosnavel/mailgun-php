@@ -29,7 +29,7 @@ you want to use.
 If you just want to get started quickly you should run the following command:
 
 ```bash
-composer require mailgun/mailgun-php symfony/http-client nyholm/psr7
+composer require cosnavel/mailgun-php symfony/http-client nyholm/psr7
 ```
 
 ## Usage
