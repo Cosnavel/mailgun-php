@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Mailgun\Api;
 
+use Illuminate\Support\Facades\Log;
 use Mailgun\Assert;
 use Mailgun\Exception\InvalidArgumentException;
 use Mailgun\Message\BatchMessage;
@@ -43,13 +44,16 @@ class Message extends HttpApi
 
         $postDataMultipart = [];
         $fields = ['attachment', 'inline'];
-        foreach ($fields as $fieldName) {
-            if (!isset($params[$fieldName])) {
+        for ($i = 0; $i < count($fields); $i++) {
+            $fieldName = $fields[$i];
+            if (empty($params[$fieldName])) {
                 continue;
             }
 
             Assert::isArray($params[$fieldName]);
-            foreach ($params[$fieldName] as $file) {
+
+            for ($iFile = 0; $iFile < count($params[$fieldName]); $iFile++) {
+                $file = $params[$fieldName][$iFile];
                 $postDataMultipart[] = $this->prepareFile($fieldName, $file);
             }
 
